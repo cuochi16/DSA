@@ -9,6 +9,6 @@ package Interface;
  *
  * @author H
  */
-public interface ActionReceiver<T> {
-    public void read(T items);
+public interface ActionTransfer<T1,T2> {
+    public void transfer(T1 a, T2 b);
 }

@@ -5,13 +5,11 @@
  */
 package Interface;
 
-import java.util.ArrayList;
 
 /**
  *
  * @author H
  */
-public interface Action<T>  {
+public interface ActionSender<T>  {
     public void send(T items);
-    public void read(T items);
 }

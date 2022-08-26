@@ -5,11 +5,8 @@
  */
 package Main;
 
-import Controller.Receiver;
-import Controller.Sender;
-import Entity.Queue;
-import Entity.Stack;
-import java.util.Scanner;
+import Controller.*;
+import Entity.*;
 
 /**
  *
@@ -23,15 +20,15 @@ public class NewMain {
     public static void main(String[] args) {
         Sender sender = new Sender();
         Receiver receiver = new Receiver();
+        Transfer transfeR = new Transfer();
         Queue message = new Queue(50);
         Stack memory = new Stack(50);
         
-        Scanner s = new Scanner(System.in);
-        System.out.println("-----Write message-----");
+        System.out.println("-----Send message-----");
         sender.send(message);
+        transfeR.transfer(message, memory);
         System.out.println("-----Read message-----");
-        receiver.read(message);
-        receiver.save(message, memory);
+        receiver.read(memory);
         
     }
     

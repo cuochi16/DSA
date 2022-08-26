@@ -5,23 +5,18 @@
  */
 package Controller;
 
-import Interface.ActionReceiver;
-import Entity.Queue;
 import Entity.Stack;
+import Interface.ActionReceiver;
 
 /**
  *
  * @author nguye
  */
-public class Receiver implements ActionReceiver<Queue,Stack>  {
+public class Receiver implements ActionReceiver<Stack>  {
 
     @Override
-    public void read(Queue a) {
+    public void read(Stack a) {
         a.show();
     }
 
-    @Override
-    public void save(Queue a, Stack b) {
-        b.push(a.dequeue());
-    }
 }
