@@ -7,8 +7,9 @@ package ADT;
 
 /**
  *
- * @author nguye
+ * @author H
  */
-public class Receiver  {
-
+public interface ActionReceiver<T1,T2> extends Action<T1> {
+    public void read(T1 a);
+    public void save(T1 a,T2 b);
 }

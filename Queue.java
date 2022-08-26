@@ -115,4 +115,11 @@ public class Queue {
             System.out.println(str);
         }
     }
+    
+    public void sender(String str){
+        Queue queue = new Queue(50);
+        queue.enqueue(str);
+    }
+    
+    
 }
