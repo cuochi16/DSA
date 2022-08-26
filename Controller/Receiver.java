@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ADT;
+package Controller;
+
+import Interface.ActionReceiver;
+import Entity.Queue;
+import Entity.Stack;
 
 /**
  *
@@ -20,12 +24,4 @@ public class Receiver implements ActionReceiver<Queue,Stack>  {
     public void save(Queue a, Stack b) {
         b.push(a.dequeue());
     }
-
-    @Override
-    public void send(Queue items) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-
 }

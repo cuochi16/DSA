@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ADT;
+package Controller;
 
+import Interface.Action;
+import Entity.Queue;
 import java.util.Scanner;
 
 /**
@@ -12,23 +14,7 @@ import java.util.Scanner;
  * @author nguye
  */
 public class Sender implements Action<Queue> {
-    private String message;
-
-    public Sender(String message) {
-        this.message = message;
-    }
     
-    public Sender() {
-        
-    }
-
-    public String getSMessage() {
-        return message;
-    }
-
-    public void setSMessage(String message) {
-        this.message = message;
-    }
 
     @Override
     public void send(Queue items) {
@@ -44,12 +30,4 @@ public class Sender implements Action<Queue> {
             }
         }
     }
-
-    @Override
-    public void read(Queue items) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-    
 }

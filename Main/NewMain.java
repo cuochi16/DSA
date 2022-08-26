@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ADT;
+package Main;
 
+import Controller.Receiver;
+import Controller.Sender;
+import Entity.Queue;
+import Entity.Stack;
 import java.util.Scanner;
 
 /**

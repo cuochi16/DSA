@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ADT;
+package Entity;
 
 /**
  *
@@ -16,7 +16,7 @@ public class Stack {
     private int max,top;
     String[] stack;
     
-    Stack(int max) {
+    public Stack(int max) {
         this.max = max;
         stack = new String[this.max];
         top = -1;

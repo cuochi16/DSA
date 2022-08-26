@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ADT;
+package Interface;
 
 /**
  *
  * @author H
  */
-public interface ActionReceiver<T1,T2> extends Action<T1> {
+public interface ActionReceiver<T1,T2> {
     public void read(T1 a);
     public void save(T1 a,T2 b);
 }
