@@ -5,24 +5,19 @@
  */
 package Entity;
 
-/**
- *
- * @author nguye
- */
 public class Stack {
 
-    // max là số lượng max của stack có thể chứa;
-    // top là cái stack ở trên cùng
     private int max,top;
     String[] stack;
     
-    public Stack(int max) {
+    public Stack(int max) 
+    {
         this.max = max;
         stack = new String[this.max];
         top = -1;
     }
-    
-    public boolean grow() {
+    public boolean grow() 
+    {
         int newMax = max + max / 4;
         String[] newStack = new String[newMax];
         if(newStack == null) {
@@ -35,16 +30,16 @@ public class Stack {
         stack = newStack;
         return true;
     }
-    
-    public boolean isEmpty() {
+    public boolean isEmpty() 
+    {
         return (top == -1);
     }
-    
-    public boolean isFull() {
+    public boolean isFull() 
+    {
         return (top == max - 1);
     }
-    
-    public String push(String str) {
+    public String push(String str) 
+    {
         if(isFull() && !grow()) {
             return null;
         } else {
@@ -52,9 +47,8 @@ public class Stack {
         }
         return str;
     }
-    
-    
-    public String pop() {
+    public String pop() 
+    {
         if(isEmpty()) {
             return null;
         }
@@ -63,24 +57,19 @@ public class Stack {
         top = top - 1;
         return str;
     }
-    
-    public String top() {
+    public String top() 
+    {
         if(isEmpty()) {
             return null;
         }
         String str = stack[top];
         return str;
     }
-    
-    public void show() {
+    public void show() 
+    {
         String str = null;
         while((str = pop()) != null) {
             System.out.println(str);
         }
     }
-    
-    public static int sum(int a, int b) {
-        return a + b;
-    }
-    
 }

@@ -26,16 +26,20 @@ public class Sender implements ActionSender<Queue> {
         while(check){
             System.out.print("Enter a message : ");
             mess = s.nextLine();
-            if(mess.equalsIgnoreCase("Exit")|| mess.length()>12){
-                check = false;
+            if(mess.equals("")){
+                System.out.println("You have not entered anything! Please re-enter.");
+            }
+            else if(mess.length() <= 50){
+                    if(mess.equalsIgnoreCase("Send")){
+                        check = false;
+                    }else{
+                        LocalDateTime current = LocalDateTime.now();
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd-MM-yyyy");
+                        String formatted = current.format(formatter);
+                        items.enqueue(mess+" Sent at "+formatted);
+                    } 
             }else{
-                //khai báo đối tượng current thuộc class LocalDateTime
-                LocalDateTime current = LocalDateTime.now();
-                //sử dụng class DateTimeFormatter để định dạng ngày giờ theo kiểu pattern
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy");
-                //sử dụng phương thức format() để định dạng ngày giờ hiện tại rồi gán cho chuỗi formatted
-                String formatted = current.format(formatter);
-                items.enqueue(mess+" Sent at "+formatted);
+                System.out.println("Your message is over 250 character!! Please re-enter!!");
             }
         }
     }

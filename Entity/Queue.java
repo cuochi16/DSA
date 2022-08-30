@@ -5,10 +5,6 @@
  */
 package Entity;
 
-/**
- *
- * @author ducmy
- */
 public class Queue {
     //current number of element
     int size;
@@ -71,9 +67,9 @@ public class Queue {
         max=newMax;
         queue=newQ;
         return true;
-    }
-    
-    public String enqueue(String str) {
+    }    
+    public String enqueue(String str) 
+    {
         if(isFull() && !grow()) {
             return null;
         }
@@ -90,8 +86,8 @@ public class Queue {
         }
         return str;
     }
-    
-    public String dequeue() {
+        public String dequeue() 
+    {
         if(isEmpty()) {
             return null;
         }
@@ -108,18 +104,11 @@ public class Queue {
         }
         return str;
     }
-    
-    public void show() {
+        public void show() 
+    {
         String str = null;
         while((str = dequeue()) != null) {
             System.out.println(str);
         }
     }
-    
-    public void sender(String str){
-        Queue queue = new Queue(50);
-        queue.enqueue(str);
-    }
-    
-    
 }
